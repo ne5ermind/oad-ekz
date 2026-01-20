@@ -21,10 +21,10 @@ df
 total_engagement = sum(df["engagement"])
 df["cumsum"] = df["engagement"].cumsum()
 df["from-total"] = df["cumsum"] / total_engagement * 100
-df
+df.reset_index(drop=True)
 # %%
 
-result = df[df["from-total"] <= 80]
+result = df[df["from-total"] <= 80].reset_index(drop=True)
 result
 # %%
 
